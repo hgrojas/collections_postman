@@ -1,0 +1,58 @@
+{
+  "info": {
+    "_postman_id": "11888c69-d62b-4f0a-9a46-ec1820982a04",
+    "name": "API Dev",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "25733887"
+  },
+  "item": [
+    {
+      "name": "Api Mora",
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "password",
+              "value": "1234",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "admin",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:40868/serviciosbcba/api/mora/v1/tiene?tipoDoc=0458&nroDoc=21139261",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "40868",
+          "path": [
+            "serviciosbcba",
+            "api",
+            "mora",
+            "v1",
+            "tiene"
+          ],
+          "query": [
+            {
+              "key": "tipoDoc",
+              "value": "0458"
+            },
+            {
+              "key": "nroDoc",
+              "value": "21139261"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

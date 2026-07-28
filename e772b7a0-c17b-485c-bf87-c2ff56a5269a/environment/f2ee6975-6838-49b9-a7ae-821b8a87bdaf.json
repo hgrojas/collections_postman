@@ -1,0 +1,1 @@
+{"id":"f2ee6975-6838-49b9-a7ae-821b8a87bdaf","name":"Cache Produccion","values":[{"key":"host","value":"gestorcanales-cache-prod.ciudad.bco","enabled":true,"type":"default"},{"key":"port","value":"81","enabled":true,"type":"default"},{"key":"path","value":"api/cache/","enabled":true,"type":"default"},{"key":"tokenDelta","value":"","enabled":true,"type":"any"}]}

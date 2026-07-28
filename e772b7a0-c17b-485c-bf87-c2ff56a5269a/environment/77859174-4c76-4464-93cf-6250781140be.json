@@ -1,0 +1,1 @@
+{"id":"77859174-4c76-4464-93cf-6250781140be","name":"Cache Testing","values":[{"key":"host","value":"gestorcanales-cache-test.ciudad.bco","enabled":true,"type":"default"},{"key":"port","value":"81","enabled":true,"type":"default"},{"key":"path","value":"api/cache/","enabled":true,"type":"default"},{"key":"tokenDelta","value":"","enabled":true,"type":"any"}]}

@@ -1,0 +1,468 @@
+{
+	"info": {
+		"_postman_id": "814009a1-d406-49ff-a6c0-9c7e1b20adf4",
+		"name": "GESTORDECANALES",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25733887",
+		"_collection_link": "https://speeding-robot-468861.postman.co/workspace/Team-Workspace~5c2a51f0-c0c3-4e03-8467-bbdea1c6ed85/collection/25774153-814009a1-d406-49ff-a6c0-9c7e1b20adf4?action=share&creator=25733887&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "GDC-WS-01  - Autenticación",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var body = xml2Json(responseBody);\r",
+							"var gestorText = body['s:Envelope']['s:Body']['ExecuteResponse']['ExecuteResult'];\r",
+							"var gestorResult = xml2Json(gestorText);\r",
+							"var ticket = gestorResult['GMessage']['Response']['$'].sessionTkt;\r",
+							"\r",
+							"// Capturo el ticket de Sesion\r",
+							"pm.collectionVariables.set('ticket', ticket);\r",
+							"\r",
+							"console.log(`=> Ticket de Sesion ${ticket}`);\r",
+							"\r",
+							"pm.test('Se pudo obtener ticket de sesion', () => {\r",
+							"  pm.expect(ticket).to.not.be.empty;\r",
+							"}); "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "SOAPAction",
+						"value": "http://tempuri.org/IGestorWebService/Execute",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\">\r\n\t<soapenv:Header/>\r\n\t<soapenv:Body>\r\n\t\t<tem:Execute>\r\n\t\t\t<tem:value><![CDATA[\r\n\t\t\t\t<GMessage>\r\n\t\t\t\t\t<Macro name=\"SECURITY\" reply=\"YES\" version=\"1.0\"/>\r\n\t\t\t\t\t<Request sessionTkt=\"\">\r\n\t\t\t\t\t\t<Operation code=\"0001\" family=\"G_AUTH\" version=\"1.0\"/>\r\n\t\t\t\t\t\t<Parameters>\r\n\t\t\t\t\t\t\t<Application>\r\n\t\t\t\t\t\t\t\t<ID>100</ID>\r\n\t\t\t\t\t\t\t\t<Name>AltaCLiente</Name>\r\n\t\t\t\t\t\t\t\t<BranchID>111</BranchID></Application>\r\n\t\t\t\t\t\t\t<User>\r\n\t\t\t\t\t\t\t\t<Domain>ciudad.bco</Domain>\r\n\t\t\t\t\t\t\t\t<ID>Sr450940</ID>\r\n\t\t\t\t\t\t\t\t<Name>German</Name>\r\n\t\t\t\t\t\t\t</User>\r\n\t\t\t\t\t\t</Parameters>\r\n\t\t\t\t\t</Request>\r\n\t\t\t\t</GMessage>]]></tem:value>\r\n\t\t</tem:Execute>\r\n\t</soapenv:Body>\r\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{gestorhostname}}:8731/WebService.svc",
+					"protocol": "http",
+					"host": [
+						"{{gestorhostname}}"
+					],
+					"port": "8731",
+					"path": [
+						"WebService.svc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GDC-WS-02  - Consulta Cotizaciones",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var body = xml2Json(responseBody);\r",
+							"var gestorText = body['s:Envelope']['s:Body']['ExecuteResponse']['ExecuteResult'];\r",
+							"var gestorResult = xml2Json(gestorText);\r",
+							"var gestorResponse = gestorResult['GMessage']['Response']['Parameters'];\r",
+							"const [cotizacion1] = gestorResponse.GrupoCotizacion.Cotizaciones.Cotizacion;\r",
+							"const { CodigoISO, Descripcion } = cotizacion1.Datos.Moneda;\r",
+							"const { Compra } = cotizacion1.Datos;\r",
+							"console.log(` -> Moneda detectada: ${CodigoISO} / ${Descripcion} - Valor Compra ${Compra}`);\r",
+							"\r",
+							"pm.test('Moneda Dolar Detectada', () => {\r",
+							"    pm.expect(CodigoISO).to.be.eq('USD');\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "SOAPAction",
+						"value": "http://tempuri.org/IGestorWebService/Execute",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\">\r\n\t<soapenv:Header/>\r\n\t<soapenv:Body>\r\n\t\t<tem:Execute>\r\n\t\t\t<tem:value><![CDATA[\r\n<GMessage>\r\n    <Macro name=\"TRANSAC\" reply=\"YES\" version=\"1.0\"/>\r\n    <Request sessionTkt=\"{{ticket}}\">\r\n    <Operation family=\"G_UTIL\" code=\"0030\" version=\"1.0\" />\r\n              <Parameters>\r\n                       <TipoCotizacion>Monedas</TipoCotizacion>\r\n                       <Codigo></Codigo>\r\n              </Parameters>\r\n    </Request>\r\n</GMessage>\r\n\r\n]]></tem:value>\r\n\t\t</tem:Execute>\r\n\t</soapenv:Body>\r\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{gestorhostname}}:8731/WebService.svc",
+					"protocol": "http",
+					"host": [
+						"{{gestorhostname}}"
+					],
+					"port": "8731",
+					"path": [
+						"WebService.svc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GDC-WS-03  - Consulta de Clientes",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const body = xml2Json(responseBody);\r",
+							"const gestorText = body['s:Envelope']['s:Body']['ExecuteResponse']['ExecuteResult'];\r",
+							"const gestorResult = xml2Json(gestorText);\r",
+							"const gestorResponse = gestorResult['GMessage']['Response']['Parameters'];\r",
+							"const {ApNom_o_RSocial} = gestorResponse;\r",
+							"const {Email} = gestorResponse; \r",
+							"const {Calle, Nro} = gestorResponse.Domicilios.Domicilio;\r",
+							"\r",
+							"console.log(` -> Persona Detectada: ${ApNom_o_RSocial} / Email: ${Email} - Direccion: ${Calle} ${Nro}`);\r",
+							"\r",
+							"pm.test(\"Persona Detectada con Mail correcto\", function () {\r",
+							"    pm.expect(Email).to.be.eq('jppampin@gmail.com');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "SOAPAction",
+						"value": "http://tempuri.org/IGestorWebService/Execute",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\">\r\n\t<soapenv:Header/>\r\n\t<soapenv:Body>\r\n\t\t<tem:Execute>\r\n\t\t\t<tem:value><![CDATA[\r\n<GMessage>\r\n    <Macro name=\"TRANSAC\" reply=\"YES\" version=\"1.0\"/>\r\n    <Request sessionTkt=\"{{ticket}}\">\r\n      <Operation code=\"0002\" family=\"G_CLIE\" version=\"1.1\"/>\r\n        <Parameters>\r\n            <Tipo_Doc_Principal>{{gestortipodoc}}</Tipo_Doc_Principal>\r\n            <Nro_Doc_Principal>{{gestornrodoc}}</Nro_Doc_Principal>\r\n        </Parameters>\r\n    </Request>\r\n</GMessage>\r\n\r\n]]></tem:value>\r\n\t\t</tem:Execute>\r\n\t</soapenv:Body>\r\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{gestorhostname}}:8731/WebService.svc",
+					"protocol": "http",
+					"host": [
+						"{{gestorhostname}}"
+					],
+					"port": "8731",
+					"path": [
+						"WebService.svc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GDC-WS-04 - Consulta Productos Relacionados la Cliente",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const body = xml2Json(responseBody);\r",
+							"const gestorText = body['s:Envelope']['s:Body']['ExecuteResponse']['ExecuteResult'];\r",
+							"const gestorResult = xml2Json(gestorText);\r",
+							"const gestorResponse = gestorResult['GMessage']['Response']['Parameters'];\r",
+							"const cuenta = gestorResponse.ProductosRelacionados.ProductoRelacionado.find((p) => p.IDCuenta.Tipo == 'CAHO');\r",
+							"\r",
+							"const {Descripcion} = cuenta;\r",
+							"console.log(` -> Productos Relacionado Detectado - Descripcion:  ${Descripcion}`);\r",
+							"\r",
+							"pm.test(\"Cuenta CAHO detectada de Agente del Banco\", function () {\r",
+							"    pm.expect(Descripcion).to.be.eq('Agentes del Banco');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "SOAPAction",
+						"value": "http://tempuri.org/IGestorWebService/Execute",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\">\r\n\t<soapenv:Header/>\r\n\t<soapenv:Body>\r\n\t\t<tem:Execute>\r\n\t\t\t<tem:value><![CDATA[\r\n<GMessage>\r\n    <Macro name=\"TRANSAC\" reply=\"YES\" version=\"1.0\"/>\r\n    <Request sessionTkt=\"{{ticket}}\">\r\n     <Operation family=\"G_CLIE\" code=\"0004\" version=\"1.0\" />\r\n<Parameters>\r\n  <IDCliente>\r\n    <Documento>\r\n      <Tipo>{{gestortipodoc}}</Tipo>\r\n      <Numero>{{gestornrodoc}}</Numero>\r\n    </Documento>\r\n  </IDCliente>\r\n</Parameters>\r\n    </Request>\r\n</GMessage>\r\n\r\n]]></tem:value>\r\n\t\t</tem:Execute>\r\n\t</soapenv:Body>\r\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{gestorhostname}}:8731/WebService.svc",
+					"protocol": "http",
+					"host": [
+						"{{gestorhostname}}"
+					],
+					"port": "8731",
+					"path": [
+						"WebService.svc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GDC-WS-05 - Consulta de Scoring Tarjeta Sin consumo",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "SOAPAction",
+						"value": "http://tempuri.org/IGestorWebService/Execute",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\">\r\n    <soapenv:Header/>\r\n    <soapenv:Body>\r\n        <tem:Execute>\r\n            <tem:value>\r\n                <![CDATA[\r\n<GMessage>\r\n    <Macro name=\"TRANSAC\" reply=\"YES\" version=\"1.0\" />\r\n    <Request sessionTkt=\"{{ticket}}\">\r\n        <Operation code=\"0005\" family=\"G_CLIE\" version=\"1.0\" />\r\n        <Parameters>\r\n            <SolicitudScoring>\r\n                <Producto>\r\n                    <Codigo>TCSC0001</Codigo>\r\n                    <Descripcion>Tarjeta de Credito Sin Consumo</Descripcion>\r\n                </Producto>\r\n                <Solicitante>\r\n                    <Nombre>Juan Pablo</Nombre>\r\n                    <Apellido>Pampin</Apellido>\r\n                    <Sexo>M</Sexo>\r\n                    <CUITCUIL>20268443402</CUITCUIL>\r\n<!--                <CUITCUIL>20347815323</CUITCUIL>\r\n                    <Apellido>Castro</Apellido>\r\n                    <Nombre>Alejandro Nahuel</Nombre> -->\r\n                    <NroDoc>{{gestornrodoc}}</NroDoc>\r\n<!--                <Sexo>M</Sexo> -->\r\n                    <TipoDoc>{{gestortipodoc}}</TipoDoc>\r\n                </Solicitante>\r\n            </SolicitudScoring>\r\n        </Parameters>\r\n    </Request>\r\n</GMessage>\r\n\r\n]]>\r\n</tem:value>\r\n</tem:Execute>\r\n</soapenv:Body>\r\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{gestorhostname}}:8731/WebService.svc",
+					"protocol": "http",
+					"host": [
+						"{{gestorhostname}}"
+					],
+					"port": "8731",
+					"path": [
+						"WebService.svc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GDC-WS-06 - Consulta de Productos PreAprobados",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "SOAPAction",
+						"value": "http://tempuri.org/IGestorWebService/Execute",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\">\r\n    <soapenv:Header/>\r\n    <soapenv:Body>\r\n        <tem:Execute>\r\n            <tem:value>\r\n                <![CDATA[\r\n<GMessage>\r\n    <Macro name=\"TRANSAC\" reply=\"YES\" version=\"1.0\" />\r\n    <Request sessionTkt=\"{{ticket}}\">\r\n        <Operation code=\"0001\" family=\"G_PROD\" version=\"1.0\" />\r\n        <Parameters>\r\n                                                        <IDCliente>\r\n                                                                <Documento>\r\n                                                                        <Tipo>{{gestortipodoc}}</Tipo>\r\n                                                                        <Numero>{{gestornrodoc}}</Numero></Documento>\r\n                                                        </IDCliente>\r\n                                                        <Canal>CAJA</Canal>\r\n                                                </Parameters>\r\n\r\n    </Request>\r\n</GMessage>\r\n\r\n]]>\r\n</tem:value>\r\n</tem:Execute>\r\n</soapenv:Body>\r\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{gestorhostname}}:8731/WebService.svc",
+					"protocol": "http",
+					"host": [
+						"{{gestorhostname}}"
+					],
+					"port": "8731",
+					"path": [
+						"WebService.svc"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "gestortipodoc",
+			"value": "00",
+			"type": "default"
+		},
+		{
+			"key": "gestornrodoc",
+			"value": "26844340",
+			"type": "default"
+		},
+		{
+			"key": "ticket",
+			"value": ""
+		}
+	]
+}

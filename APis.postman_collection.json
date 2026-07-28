@@ -1,0 +1,187 @@
+{
+	"info": {
+		"_postman_id": "b390f050-4ae2-4311-9299-34c0000e45a9",
+		"name": "APis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25733887",
+		"_collection_link": "https://speeding-robot-468861.postman.co/workspace/Team-Workspace~5c2a51f0-c0c3-4e03-8467-bbdea1c6ed85/collection/25733887-b390f050-4ae2-4311-9299-34c0000e45a9?action=share&creator=25733887&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Consulta Datos Cuentas - PROD",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "consudatcta",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "fyc%bpTKB4Y",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"controlaHaberes\": \"S\",\r\n  \"tipoCuenta\": 4,\r\n  \"canal\": \"AG\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://api-internas-prod:8004/api/v1/cuentas/:nroDocumentoFormatoCOBIS",
+					"protocol": "http",
+					"host": [
+						"api-internas-prod"
+					],
+					"port": "8004",
+					"path": [
+						"api",
+						"v1",
+						"cuentas",
+						":nroDocumentoFormatoCOBIS"
+					],
+					"variable": [
+						{
+							"key": "nroDocumentoFormatoCOBIS",
+							"value": "411102001552517",
+							"description": "Nro de documento en formato COBIS"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consulta Datos Cuentas - TEST",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"controlaHaberes\": \"S\",\r\n  \"tipoCuenta\": 4,\r\n  \"canal\": \"AG\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://api-internas-test:8004/api/v1/cuentas/:nroDocumentoFormatoCOBIS",
+					"protocol": "http",
+					"host": [
+						"api-internas-test"
+					],
+					"port": "8004",
+					"path": [
+						"api",
+						"v1",
+						"cuentas",
+						":nroDocumentoFormatoCOBIS"
+					],
+					"variable": [
+						{
+							"key": "nroDocumentoFormatoCOBIS",
+							"value": "411102001552517",
+							"description": "Nro. de documento en formato COBIS"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consulta Cliente - TEST",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api-internas-test:8005/clientes-rest/api/v1/clientes?iDocumentoPersonal.idIdTipo=01&iDocumentoPersonal.iIdNumero=21139261",
+					"protocol": "http",
+					"host": [
+						"api-internas-test"
+					],
+					"port": "8005",
+					"path": [
+						"clientes-rest",
+						"api",
+						"v1",
+						"clientes"
+					],
+					"query": [
+						{
+							"key": "iDocumentoPersonal.idIdTipo",
+							"value": "01"
+						},
+						{
+							"key": "iDocumentoPersonal.iIdNumero",
+							"value": "21139261"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consulta Cliente - PROD",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api-internas-prod:8005/clientes-rest/api/v1/clientes?iDocumentoPersonal.idIdTipo=01&iDocumentoPersonal.iIdNumero=21139261",
+					"protocol": "http",
+					"host": [
+						"api-internas-prod"
+					],
+					"port": "8005",
+					"path": [
+						"clientes-rest",
+						"api",
+						"v1",
+						"clientes"
+					],
+					"query": [
+						{
+							"key": "iDocumentoPersonal.idIdTipo",
+							"value": "01"
+						},
+						{
+							"key": "iDocumentoPersonal.iIdNumero",
+							"value": "21139261"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "nroCuentaFormatoCOBIS",
+			"value": "411102001552517"
+		}
+	]
+}

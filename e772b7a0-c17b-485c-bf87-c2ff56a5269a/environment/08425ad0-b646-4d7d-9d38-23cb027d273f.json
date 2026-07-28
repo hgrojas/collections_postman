@@ -1,0 +1,1 @@
+{"id":"08425ad0-b646-4d7d-9d38-23cb027d273f","name":"Cache Desarrollo","values":[{"key":"host","value":"localhost","enabled":true,"type":"default"},{"key":"port","value":"6081","enabled":true,"type":"default"},{"key":"path","value":"","enabled":true,"type":"default"},{"key":"tokenDelta","value":"","enabled":true,"type":"any"}]}

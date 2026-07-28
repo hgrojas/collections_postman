@@ -1,0 +1,57 @@
+{
+	"info": {
+		"_postman_id": "12870b4a-469e-4176-bc5c-f862fdd54dcf",
+		"name": "Pruebas Varias",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TGCBA Consulta de estado de la boleta (PROD)",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "bcociudad",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "bancociudad",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    numero : \"\",\r\n    codigoBarra:\"F3A234A56A83426D8FFD722FF165D7AA130003618700001075001712222\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://buisir.buenosaires.gob.ar/SERVICE/api/BUI/GetEstadoBoleta",
+					"protocol": "https",
+					"host": [
+						"buisir",
+						"buenosaires",
+						"gob",
+						"ar"
+					],
+					"path": [
+						"SERVICE",
+						"api",
+						"BUI",
+						"GetEstadoBoleta"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,2512 @@
+{
+  "info": {
+    "_postman_id": "78517d04-5640-4163-91fd-d9ee62a8f29f",
+    "name": "API FCI v2 DEV",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "25733887"
+  },
+  "item": [
+    {
+      "name": "Consultas",
+      "item": [
+        {
+          "name": "Cuentas BCBA",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://localhost:7282/api/inversiones/v1/cuentasBCBA?tipoDoc=00&nroDoc=21139261",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7282",
+              "path": [
+                "api",
+                "inversiones",
+                "v1",
+                "cuentasBCBA"
+              ],
+              "query": [
+                {
+                  "key": "tipoDoc",
+                  "value": "00"
+                },
+                {
+                  "key": "nroDoc",
+                  "value": "21139261"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Cuentas BCBA LIVE",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://localhost:7282/api/health/live",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7282",
+              "path": [
+                "api",
+                "health",
+                "live"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Cuentas BCBA READY",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://localhost:7282/api/health/ready",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7282",
+              "path": [
+                "api",
+                "health",
+                "ready"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Cuentas Vinculadas",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://localhost:7154/api/inversiones/v1/cuentas_fci?tipoDoc=88&nroDoc=20297187717&administradora=BCBA",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7154",
+              "path": [
+                "api",
+                "inversiones",
+                "v1",
+                "cuentas_fci"
+              ],
+              "query": [
+                {
+                  "key": "tipoDoc",
+                  "value": "88"
+                },
+                {
+                  "key": "nroDoc",
+                  "value": "20297187717"
+                },
+                {
+                  "key": "administradora",
+                  "value": "BCBA"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Consulta Liquidacion",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://localhost:7219/api/inversiones/v1/:nro_cuotapartista/obtener-liquidacion?administradora=DELTA&fondoId=371&fondoNum=2u&tipoVCPID=663&tipoVCPAbreviatura=A&fechaDesde=20230101&fechaHasta=20240708",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7219",
+              "path": [
+                "api",
+                "inversiones",
+                "v1",
+                ":nro_cuotapartista",
+                "obtener-liquidacion"
+              ],
+              "query": [
+                {
+                  "key": "administradora",
+                  "value": "DELTA"
+                },
+                {
+                  "key": "fondoId",
+                  "value": "371"
+                },
+                {
+                  "key": "fondoNum",
+                  "value": "2u"
+                },
+                {
+                  "key": "tipoVCPID",
+                  "value": "663"
+                },
+                {
+                  "key": "tipoVCPAbreviatura",
+                  "value": "A"
+                },
+                {
+                  "key": "fechaDesde",
+                  "value": "20230101"
+                },
+                {
+                  "key": "fechaHasta",
+                  "value": "20240708"
+                }
+              ],
+              "variable": [
+                {
+                  "key": "nro_cuotapartista",
+                  "value": "1600193"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Problema con Consulta Liquidacion",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://localhost:7219/api/inversiones/v1/:nro_cuotapartista/obtener-liquidacion?administradora=DELTA&fondoId=371&fondoNum=2u&tipoVCPID=663&tipoVCPAbreviatura=A&fechaDesde=20230101&fechaHasta=20240708",
+                  "protocol": "https",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "7219",
+                  "path": [
+                    "api",
+                    "inversiones",
+                    "v1",
+                    ":nro_cuotapartista",
+                    "obtener-liquidacion"
+                  ],
+                  "query": [
+                    {
+                      "key": "administradora",
+                      "value": "DELTA"
+                    },
+                    {
+                      "key": "fondoId",
+                      "value": "371"
+                    },
+                    {
+                      "key": "fondoNum",
+                      "value": "2u"
+                    },
+                    {
+                      "key": "tipoVCPID",
+                      "value": "663"
+                    },
+                    {
+                      "key": "tipoVCPAbreviatura",
+                      "value": "A"
+                    },
+                    {
+                      "key": "fechaDesde",
+                      "value": "20230101"
+                    },
+                    {
+                      "key": "fechaHasta",
+                      "value": "20240708"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "key": "nro_cuotapartista",
+                      "value": "1600193"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "Text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "Valorizacion Historica",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://localhost:7098/api/inversiones/v1/valorizacion-historica-movimientos?administradora=DELTA&fondoId=371&fondoNum=24&fechaDesde=20210101&fechaHasta=20210708&nroCuotapartista=1600193&tipoVCPId=663&clase=A",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7098",
+              "path": [
+                "api",
+                "inversiones",
+                "v1",
+                "valorizacion-historica-movimientos"
+              ],
+              "query": [
+                {
+                  "key": "administradora",
+                  "value": "DELTA"
+                },
+                {
+                  "key": "fondoId",
+                  "value": "371"
+                },
+                {
+                  "key": "fondoNum",
+                  "value": "24"
+                },
+                {
+                  "key": "fechaDesde",
+                  "value": "20210101"
+                },
+                {
+                  "key": "fechaHasta",
+                  "value": "20210708"
+                },
+                {
+                  "key": "nroCuotapartista",
+                  "value": "1600193"
+                },
+                {
+                  "key": "tipoVCPId",
+                  "value": "663"
+                },
+                {
+                  "key": "clase",
+                  "value": "A"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Valorizacion Historica - CASO 1",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://localhost:7098/api/inversiones/v1/valorizacion-historica-movimientos?administradora=DELTA&fondoId=408&fondoNum=7&fechaDesde=20240925&fechaHasta=20241025&nroCuotapartista=1606669&tipoVCPId=737&clase=A",
+                  "protocol": "https",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "7098",
+                  "path": [
+                    "api",
+                    "inversiones",
+                    "v1",
+                    "valorizacion-historica-movimientos"
+                  ],
+                  "query": [
+                    {
+                      "key": "administradora",
+                      "value": "DELTA"
+                    },
+                    {
+                      "key": "fondoId",
+                      "value": "408"
+                    },
+                    {
+                      "key": "fondoNum",
+                      "value": "7"
+                    },
+                    {
+                      "key": "fechaDesde",
+                      "value": "20240925"
+                    },
+                    {
+                      "key": "fechaHasta",
+                      "value": "20241025"
+                    },
+                    {
+                      "key": "nroCuotapartista",
+                      "value": "1606669"
+                    },
+                    {
+                      "key": "tipoVCPId",
+                      "value": "737"
+                    },
+                    {
+                      "key": "clase",
+                      "value": "A"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "Text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "Evolucion Cuotapartes",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://localhost:7125/api/inversiones/v1/evolucion-cuotapartes?fechaDesde=20230101&administradora=DELTA&fondoId=371&fondoNum=2&clase=A",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7125",
+              "path": [
+                "api",
+                "inversiones",
+                "v1",
+                "evolucion-cuotapartes"
+              ],
+              "query": [
+                {
+                  "key": "fechaDesde",
+                  "value": "20230101"
+                },
+                {
+                  "key": "fechaHasta",
+                  "value": "20240708",
+                  "disabled": true
+                },
+                {
+                  "key": "administradora",
+                  "value": "DELTA"
+                },
+                {
+                  "key": "fondoId",
+                  "value": "371"
+                },
+                {
+                  "key": "fondoNum",
+                  "value": "2"
+                },
+                {
+                  "key": "clase",
+                  "value": "A"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Evolucion Cuotapartes READY",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://localhost:7125/api/health/ready",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7125",
+              "path": [
+                "api",
+                "health",
+                "ready"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Evolucion Cuotapartes LIVE",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://localhost:7125/api/health/live",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7125",
+              "path": [
+                "api",
+                "health",
+                "live"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Consulta de Solicitudes",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://localhost:7155/api/inversiones/v1/obtener-solicitudes?tipoDoc=00&nroDoc=29718771&fechaDesde=20230101&fechaHasta=20240505",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7155",
+              "path": [
+                "api",
+                "inversiones",
+                "v1",
+                "obtener-solicitudes"
+              ],
+              "query": [
+                {
+                  "key": "tipoDoc",
+                  "value": "00"
+                },
+                {
+                  "key": "nroDoc",
+                  "value": "29718771"
+                },
+                {
+                  "key": "fechaDesde",
+                  "value": "20230101"
+                },
+                {
+                  "key": "fechaHasta",
+                  "value": "20240505"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filtrar Cuotapartista",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://localhost:7151/api/inversiones/v1/get-cuotapartistas?tipoDoc=88&nroDoc=30506731883",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7151",
+              "path": [
+                "api",
+                "inversiones",
+                "v1",
+                "get-cuotapartistas"
+              ],
+              "query": [
+                {
+                  "key": "tipoDoc",
+                  "value": "88"
+                },
+                {
+                  "key": "nroDoc",
+                  "value": "30506731883"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Metricas",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://localhost:7151/metrics",
+                  "protocol": "https",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "7151",
+                  "path": [
+                    "metrics"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "Text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            },
+            {
+              "name": "Ready",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://localhost:7151/api/health/ready",
+                  "protocol": "https",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "7151",
+                  "path": [
+                    "api",
+                    "health",
+                    "ready"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "Text",
+              "header": [],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "Fondos para Operar",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://localhost:7167/api/inversiones/v1/fondosparaoperar?moneda=PESOS&tipoDoc=88&nroDoc=20297187717&administradora=BCBA",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7167",
+              "path": [
+                "api",
+                "inversiones",
+                "v1",
+                "fondosparaoperar"
+              ],
+              "query": [
+                {
+                  "key": "moneda",
+                  "value": "PESOS"
+                },
+                {
+                  "key": "tipoDoc",
+                  "value": "88"
+                },
+                {
+                  "key": "nroDoc",
+                  "value": "20297187717"
+                },
+                {
+                  "key": "administradora",
+                  "value": "BCBA"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Fondos para Operar - Not Found",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://localhost:7167/api/inversiones/v1/fondosparaoperar?moneda=PESOS&tipoDoc=00&nroDoc=29771718&administradora=BCBA",
+                  "protocol": "https",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "7167",
+                  "path": [
+                    "api",
+                    "inversiones",
+                    "v1",
+                    "fondosparaoperar"
+                  ],
+                  "query": [
+                    {
+                      "key": "moneda",
+                      "value": "PESOS"
+                    },
+                    {
+                      "key": "tipoDoc",
+                      "value": "00"
+                    },
+                    {
+                      "key": "nroDoc",
+                      "value": "29771718"
+                    },
+                    {
+                      "key": "administradora",
+                      "value": "BCBA"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": null,
+              "header": null,
+              "cookie": [],
+              "body": null
+            }
+          ]
+        },
+        {
+          "name": "Posicion Consolidada v2",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://localhost:7118/api/inversiones/v2/:nro_cuotapartista/posicion-consolidada?administradora=DELTA&fecha=20250505",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7118",
+              "path": [
+                "api",
+                "inversiones",
+                "v2",
+                ":nro_cuotapartista",
+                "posicion-consolidada"
+              ],
+              "query": [
+                {
+                  "key": "administradora",
+                  "value": "DELTA"
+                },
+                {
+                  "key": "fecha",
+                  "value": "20250505"
+                }
+              ],
+              "variable": [
+                {
+                  "key": "nro_cuotapartista",
+                  "value": "1600193"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Posicion Consolidada DELTA",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://localhost:7118/api/inversiones/v2/:nro_cuotapartista/posicion-consolidada?administradora=DELTA&fecha=20250505",
+                  "protocol": "https",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "7118",
+                  "path": [
+                    "api",
+                    "inversiones",
+                    "v2",
+                    ":nro_cuotapartista",
+                    "posicion-consolidada"
+                  ],
+                  "query": [
+                    {
+                      "key": "administradora",
+                      "value": "DELTA"
+                    },
+                    {
+                      "key": "fecha",
+                      "value": "20250505"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "key": "nro_cuotapartista",
+                      "value": "1600193"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "Text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            },
+            {
+              "name": "Posicion Consolidada BCBA",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://localhost:7118/api/inversiones/v2/:nro_cuotapartista/posicion-consolidada?administradora=BCBA&fecha=20250505",
+                  "protocol": "https",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "7118",
+                  "path": [
+                    "api",
+                    "inversiones",
+                    "v2",
+                    ":nro_cuotapartista",
+                    "posicion-consolidada"
+                  ],
+                  "query": [
+                    {
+                      "key": "administradora",
+                      "value": "BCBA"
+                    },
+                    {
+                      "key": "fecha",
+                      "value": "20250505"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "key": "nro_cuotapartista",
+                      "value": "7"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "Text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "Posicion Consolidada v1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://localhost:7118/api/inversiones/v1/:nro_cuotapartista/posicion-consolidada?administradora=DELTA&fecha=20250505",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7118",
+              "path": [
+                "api",
+                "inversiones",
+                "v1",
+                ":nro_cuotapartista",
+                "posicion-consolidada"
+              ],
+              "query": [
+                {
+                  "key": "administradora",
+                  "value": "DELTA"
+                },
+                {
+                  "key": "fecha",
+                  "value": "20250505"
+                }
+              ],
+              "variable": [
+                {
+                  "key": "nro_cuotapartista",
+                  "value": "1600193"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Posicion Consolidada DELTA",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://localhost:7118/api/inversiones/v1/:nro_cuotapartista/posicion-consolidada?administradora=DELTA&fecha=20250505",
+                  "protocol": "https",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "7118",
+                  "path": [
+                    "api",
+                    "inversiones",
+                    "v1",
+                    ":nro_cuotapartista",
+                    "posicion-consolidada"
+                  ],
+                  "query": [
+                    {
+                      "key": "administradora",
+                      "value": "DELTA"
+                    },
+                    {
+                      "key": "fecha",
+                      "value": "20250505"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "key": "nro_cuotapartista",
+                      "value": "1600193"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "Text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            },
+            {
+              "name": "Posicion Consolidada BCBA",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://localhost:7118/api/inversiones/v1/:nro_cuotapartista/posicion-consolidada?administradora=BCBA&fecha=20250505",
+                  "protocol": "https",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "7118",
+                  "path": [
+                    "api",
+                    "inversiones",
+                    "v1",
+                    ":nro_cuotapartista",
+                    "posicion-consolidada"
+                  ],
+                  "query": [
+                    {
+                      "key": "administradora",
+                      "value": "BCBA"
+                    },
+                    {
+                      "key": "fecha",
+                      "value": "20250505"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "key": "nro_cuotapartista",
+                      "value": "7"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "Text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "Obtener Saldo Money Market",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://localhost:7171/api/inversiones/v1/obtener-saldo-moneymarket?canal=HB&cuit=27287250768",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7171",
+              "path": [
+                "api",
+                "inversiones",
+                "v1",
+                "obtener-saldo-moneymarket"
+              ],
+              "query": [
+                {
+                  "key": "canal",
+                  "value": "HB"
+                },
+                {
+                  "key": "cuit",
+                  "value": "27287250768"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Reporte Consolidado Ordenes By Cuotapartista",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Test Inversor",
+      "item": [
+        {
+          "name": "Test Inversor Health LIVE",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://localhost:55884/api/health/live",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "55884",
+              "path": [
+                "api",
+                "health",
+                "live"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Test Inversor - Agrega Test",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"tipoDoc\": \"00\",\r\n  \"nroDoc\": \"25623589\",\r\n  \"canal\": \"AG\",\r\n  \"respuestas\": [\r\n    {\r\n      \"id_pregunta\": 2,\r\n      \"id_respuesta\": 2\r\n    }\r\n  ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:55884/api/inversiones/v1/test-inversor/save",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "55884",
+              "path": [
+                "api",
+                "inversiones",
+                "v1",
+                "test-inversor",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Test Inversor Health READY",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://localhost:55884/api/health/ready",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "55884",
+              "path": [
+                "api",
+                "health",
+                "ready"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "[DEV] Test Inversor  - Tests del Cliente",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://localhost:55884/api/inversiones/v1/test-inversor/cliente?tipoDoc=00&nroDoc=21139261",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "55884",
+              "path": [
+                "api",
+                "inversiones",
+                "v1",
+                "test-inversor",
+                "cliente"
+              ],
+              "query": [
+                {
+                  "key": "tipoDoc",
+                  "value": "00"
+                },
+                {
+                  "key": "nroDoc",
+                  "value": "21139261"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "[DEV] Test Inversor - Catalogo",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://localhost:55884/api/inversiones/v1/test-inversor?tipoDoc=00&nroDoc=29718771",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "55884",
+              "path": [
+                "api",
+                "inversiones",
+                "v1",
+                "test-inversor"
+              ],
+              "query": [
+                {
+                  "key": "tipoDoc",
+                  "value": "00"
+                },
+                {
+                  "key": "nroDoc",
+                  "value": "29718771"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Metricas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://localhost:55884/metrics",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "55884",
+              "path": [
+                "metrics"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "[DEV] Test Inversor - Save",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"tipoDoc\": \"00\",\r\n    \"nroDoc\": \"11643070\",\r\n    \"canal\": \"AG\",\r\n    \"respuestas\": [\r\n        {\r\n            \"id_pregunta\": 1,\r\n            \"id_respuesta\": 32\r\n        },\r\n        {\r\n            \"id_pregunta\": 13,\r\n            \"id_respuesta\": 35\r\n        },\r\n        {\r\n            \"id_pregunta\": 14,\r\n            \"id_respuesta\": 38\r\n        },\r\n        {\r\n            \"id_pregunta\": 15,\r\n            \"id_respuesta\": 41\r\n        },\r\n        {\r\n            \"id_pregunta\": 16,\r\n            \"id_respuesta\": 44\r\n        },\r\n        {\r\n            \"id_pregunta\": 17,\r\n            \"id_respuesta\": 48\r\n        },\r\n        {\r\n            \"id_pregunta\": 18,\r\n            \"id_respuesta\": 52\r\n        },\r\n        {\r\n            \"id_pregunta\": 19,\r\n            \"id_respuesta\": 56\r\n        }\r\n    ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:55884/api/inversiones/v1/test-inversor/save",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "55884",
+              "path": [
+                "api",
+                "inversiones",
+                "v1",
+                "test-inversor",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Alta Cuotapartista",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "https://localhost:7118/api/inversiones/v1/cuotapartistas?tipoDoc=00&nroDoc=21875269&administradora=BCBA",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "7118",
+          "path": [
+            "api",
+            "inversiones",
+            "v1",
+            "cuotapartistas"
+          ],
+          "query": [
+            {
+              "key": "tipoDoc",
+              "value": "00"
+            },
+            {
+              "key": "nroDoc",
+              "value": "21875269"
+            },
+            {
+              "key": "administradora",
+              "value": "BCBA"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Metricas",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "https://localhost:7118/metrics",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7118",
+              "path": [
+                "metrics"
+              ]
+            }
+          },
+          "_postman_previewlanguage": "Text",
+          "header": [],
+          "cookie": [],
+          "body": ""
+        },
+        {
+          "name": "Ready",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "https://localhost:7118/api/health/ready",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7118",
+              "path": [
+                "api",
+                "health",
+                "ready"
+              ]
+            }
+          },
+          "_postman_previewlanguage": "Text",
+          "header": [],
+          "cookie": [],
+          "body": ""
+        }
+      ]
+    },
+    {
+      "name": "Suscripcion",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n   \"cuenta\": {\r\n      \"tipo\": \"CAHO\",\r\n      \"numero\": \"411102001317712\",\r\n      \"dependencia\": 21,\r\n      \"moneda\": \"PESOS\",\r\n      \"numeroCobis\": \"411102001317712\"\r\n   },\r\n   \"fondo\": {\r\n      \"administradora\": \"DELTA\",\r\n      \"fondoId\": 371,\r\n      \"fondoNum\": 2,\r\n      \"nombre\": \"DELTA AHORRO\",\r\n      \"tipoVCPID\": 663,\r\n      \"tipoVCPAbreviatura\": \"A\",\r\n      \"tipoVCPDescripcion\": \"Clase A\",\r\n      \"idCondicionIngresoEgreso\": \"UNICO\",\r\n      \"moneda\": {\r\n         \"id\": \"ARS\",\r\n         \"simbolo\": \"$\",\r\n         \"descripcion\": \"Pesos\"\r\n      }\r\n   },\r\n   \"sucursal\": 21,\r\n   \"canalVenta\": \"AG\",\r\n   \"oficialCredito\": \"CentrodeInversiones\",\r\n   \"monto\": 0.29,\r\n   \"idSolicitudCanal\": \"999AA888\",\r\n   \"numCuotapartista\": 1600029,\r\n   \"esProgramada\": \"N\",\r\n   \"fechaProgramada\": \"\",\r\n   \"cuitCuil\": \"27360802458\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://localhost:7118/api/inversiones/v1/cuotapartistas/:idcuotapartista/suscripcion",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "7118",
+          "path": [
+            "api",
+            "inversiones",
+            "v1",
+            "cuotapartistas",
+            ":idcuotapartista",
+            "suscripcion"
+          ],
+          "variable": [
+            {
+              "key": "idcuotapartista",
+              "value": "1600193"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Suscripcion - ESCO-Fondos No Disponible",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\t\"cuenta\": {\r\n    \"tipo\": \"CAHO\",\r\n    \"numero\": \"111193\",\r\n    \"dependencia\": 30,\r\n    \"moneda\": \"PESOS\",\r\n    \"numeroCobis\": \"403002000111193\",\r\n    \"cuentaLink\": \"000000300200111193\" \r\n  },\r\n  \"fondo\": {\r\n    \"administradora\": \"BCBA\",\r\n    \"fondoId\": 8558,\r\n    \"fondoNum\":1,\r\n    \"nombre\": \"CRECER 1\",\r\n    \"tipoVCPID\": 1016,\r\n    \"tipoVCPAbreviatura\": \"A\",\r\n    \"tipoVCPDescripcion\": \"Clase A\",\r\n   \"idCondicionIngresoEgreso\": \"10\",\r\n    \"moneda\": {\r\n      \"id\": \"ARS\",\r\n      \"simbolo\": \"$\",\r\n      \"descripcion\": \"Pesos\"\r\n    }\r\n  },\r\n  \"sucursal\": 30,\r\n  \"canalVenta\": \"HB\",\r\n  \"oficialCredito\": \"CI\",\r\n  \"monto\": 150000000,\r\n  \"idSolicitudCanal\": \"0000178\",\r\n  \"numCuotapartista\": 1614989, \r\n  \"esProgramada\":\"N\",   \r\n  \"cuitCuil\":\"27279302252\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7118/api/inversiones/v1/cuotapartistas/:idcuotapartista/suscripcion",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7118",
+              "path": [
+                "api",
+                "inversiones",
+                "v1",
+                "cuotapartistas",
+                ":idcuotapartista",
+                "suscripcion"
+              ],
+              "variable": [
+                {
+                  "key": "idcuotapartista",
+                  "value": "1600193"
+                }
+              ]
+            }
+          },
+          "_postman_previewlanguage": "Text",
+          "header": [],
+          "cookie": [],
+          "body": ""
+        },
+        {
+          "name": "Suscripcion - Administradora No Valida",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n   \"cuenta\": {\r\n    \"tipo\": \"CAHO\",\r\n    \"numero\": \"111193\",\r\n    \"dependencia\": 30,\r\n    \"moneda\": \"PESOS\",\r\n    \"numeroCobis\": \"403002000111193\",\r\n    \"cuentaLink\": \"000000300200111193\" \r\n  },\r\n  \"fondo\": {\r\n    \"administradora\": \"DELTA\",\r\n    \"fondoId\": 408,\r\n    \"fondoNum\":7,\r\n    \"nombre\": \"DELTA MONEDA\",\r\n    \"tipoVCPID\": 737,\r\n    \"tipoVCPAbreviatura\": \"A\",\r\n    \"tipoVCPDescripcion\": \"Clase A\",\r\n   \"idCondicionIngresoEgreso\": \"UNICO\",\r\n    \"moneda\": {\r\n      \"id\": \"ARS\",\r\n      \"simbolo\": \"$\",\r\n      \"descripcion\": \"Pesos\"\r\n    }\r\n  },\r\n  \"sucursal\": 30,\r\n  \"canalVenta\": \"HB\",\r\n  \"oficialCredito\": \"CI\",\r\n  \"monto\": 150000000,\r\n  \"idSolicitudCanal\": \"0000180\",\r\n  \"numCuotapartista\": 1614989, \r\n  \"esProgramada\":\"N\",   \r\n  \"cuitCuil\":\"27279302252\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7118/api/inversiones/v1/cuotapartistas/:idcuotapartista/suscripcion",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7118",
+              "path": [
+                "api",
+                "inversiones",
+                "v1",
+                "cuotapartistas",
+                ":idcuotapartista",
+                "suscripcion"
+              ],
+              "variable": [
+                {
+                  "key": "idcuotapartista",
+                  "value": "1600193"
+                }
+              ]
+            }
+          },
+          "_postman_previewlanguage": "Text",
+          "header": [],
+          "cookie": [],
+          "body": ""
+        },
+        {
+          "name": "Suscripcion",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n   \"cuenta\": {\r\n      \"tipo\": \"CAHO\",\r\n      \"numero\": \"411102001317712\",\r\n      \"dependencia\": 21,\r\n      \"moneda\": \"PESOS\",\r\n      \"numeroCobis\": \"411102001317712\",\r\n      \"cuentaLink\": \"000000300200111193\"\r\n   },\r\n   \"fondo\": {\r\n      \"administradora\": \"DELTA\",\r\n      \"fondoId\": 371,\r\n      \"fondoNum\": 2,\r\n      \"nombre\": \"DELTA AHORRO\",\r\n      \"tipoVCPID\": 663,\r\n      \"tipoVCPAbreviatura\": \"A\",\r\n      \"tipoVCPDescripcion\": \"Clase A\",\r\n      \"idCondicionIngresoEgreso\": \"UNICO\",\r\n      \"moneda\": {\r\n         \"id\": \"ARS\",\r\n         \"simbolo\": \"$\",\r\n         \"descripcion\": \"Pesos\"\r\n      }\r\n   },\r\n   \"sucursal\": 21,\r\n   \"canalVenta\": \"AG\",\r\n   \"oficialCredito\": \"CentrodeInversiones\",\r\n   \"monto\": 0.29,\r\n   \"idSolicitudCanal\": \"999AA888\",\r\n   \"numCuotapartista\": 1600029,\r\n   \"esProgramada\": \"N\",\r\n   \"fechaProgramada\": \"\",\r\n   \"cuitCuil\": \"27360802458\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7118/api/inversiones/v1/cuotapartistas/:idcuotapartista/suscripcion",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7118",
+              "path": [
+                "api",
+                "inversiones",
+                "v1",
+                "cuotapartistas",
+                ":idcuotapartista",
+                "suscripcion"
+              ],
+              "variable": [
+                {
+                  "key": "idcuotapartista",
+                  "value": "1600193"
+                }
+              ]
+            }
+          },
+          "_postman_previewlanguage": "Text",
+          "header": [],
+          "cookie": [],
+          "body": ""
+        }
+      ]
+    },
+    {
+      "name": "Rescate Fondo",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"tenencia\": {\r\n    \"administradora\": \"BCBA\",\r\n    \"fondoId\": 394,\r\n    \"fondoNombre\": \"DELTA AHORRO\",\r\n    \"fondoNum\": 2,\r\n    \"tipoVCPId\": 715,\r\n    \"valorCuotaparte\": 11.008,\r\n    \"cantidadCuotapartes\": 136,\r\n    \"tipoVCPDescripcion\": \"\",\r\n    \"tipoVCPAbreviatura\": \"A\"\r\n  },\r\n  \"tipoRescate\": \"C\",\r\n  \"monto\": 0,\r\n  \"cantCuotaspartes\": 10,\r\n  \"fechaEjecucion\": \"20241104\",\r\n  \"esProgramada\": \"N\",\r\n  \"cuenta\": {\r\n    \"tipo\": \"CAHO\",\r\n    \"numero\": \"411102001317712\",\r\n    \"dependencia\": \"111\",\r\n    \"moneda\": \"PESOS\",\r\n    \"cuentaLink\": \"000411102001317712\"\r\n  },\r\n  \"canal\": \"AG\",\r\n  \"idSolicitudCanal\": \"1704\",\r\n  \"nrocuotapartista\": \"7\",\r\n  \"acreditaCanal\": \"N\",\r\n  \"cuitcuil\": \"20297187715\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://localhost:7240/api/inversiones/v2/cuotapartistas/:idcuotapartista/rescate",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "7240",
+          "path": [
+            "api",
+            "inversiones",
+            "v2",
+            "cuotapartistas",
+            ":idcuotapartista",
+            "rescate"
+          ],
+          "variable": [
+            {
+              "key": "idcuotapartista",
+              "value": "1600193"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Valida FechaEjecucion",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n \"tenencia\": {\r\n \"administradora\": \"DELTA\",\r\n \"fondoNombre\": \"DELTA PESOS\",\r\n \"fondoId\": 394,\r\n \"fondoNum\": 2,\r\n \"tipoVCPId\": 715,\r\n \"valorCuotaparte\": 11.008,\r\n \"cantidadCuotapartes\": 136,\r\n \"tipoVCPDescripcion\": \"Clase A\",\r\n \"tipoVCPAbreviatura\": \"A\",\r\n \"idCondicionIngresoEgreso\": \"UNICO\"\r\n },\r\n \"tipoRescate\": \"M\",\r\n \"monto\": 2,\r\n \"cantCuotaspartes\": 0,\r\n \"fechaEjecucion\": \" 99999999999999999999\",\r\n \"esProgramada\": \"N\",\r\n \"cuenta\": {\r\n \"tipo\": \"CAHO\",\r\n \"numero\": \"411102001317712\",\r\n \"dependencia\": \"111\",\r\n \"moneda\": \"PESOS\",\r\n \"cuentaLink\": \"000411102001317712\"\r\n },\r\n \"canal\": \"AG\",\r\n \"idSolicitudCanal\": \"12\",\r\n \"acreditaCanal\": \"N\",\r\n \"cuitcuil\": \"20297187715\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7240/api/inversiones/v1/cuotapartistas/:idcuotapartista/rescate",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7240",
+              "path": [
+                "api",
+                "inversiones",
+                "v1",
+                "cuotapartistas",
+                ":idcuotapartista",
+                "rescate"
+              ],
+              "variable": [
+                {
+                  "key": "idcuotapartista",
+                  "value": "1600193"
+                }
+              ]
+            }
+          },
+          "_postman_previewlanguage": "Text",
+          "header": [],
+          "cookie": [],
+          "body": ""
+        },
+        {
+          "name": "Valida CantCuotapartista",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n \"tenencia\": {\r\n \"administradora\": \"DELTA\",\r\n \"fondoNombre\": \"DELTA PESOS\",\r\n \"fondoId\": 394,\r\n \"fondoNum\": 2,\r\n \"tipoVCPId\": 715,\r\n \"valorCuotaparte\": 11.008,\r\n \"cantidadCuotapartes\": 136,\r\n \"tipoVCPDescripcion\": \"Clase A\",\r\n \"tipoVCPAbreviatura\": \"A\",\r\n \"idCondicionIngresoEgreso\": \"UNICO\"\r\n },\r\n \"tipoRescate\": \"M\",\r\n \"monto\": 2,\r\n \"cantCuotaspartes\": 99999999999999999999,\r\n \"fechaEjecucion\": \"20240913\",\r\n \"esProgramada\": \"N\",\r\n \"cuenta\": {\r\n \"tipo\": \"CAHO\",\r\n \"numero\": \"411102001317712\",\r\n \"dependencia\": \"111\",\r\n \"moneda\": \"PESOS\",\r\n \"cuentaLink\": \"000411102001317712\"\r\n },\r\n \"canal\": \"AG\",\r\n \"idSolicitudCanal\": \"12\",\r\n \"acreditaCanal\": \"N\",\r\n \"cuitcuil\": \"20297187715\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7240/api/inversiones/v1/cuotapartistas/:idcuotapartista/rescate",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7240",
+              "path": [
+                "api",
+                "inversiones",
+                "v1",
+                "cuotapartistas",
+                ":idcuotapartista",
+                "rescate"
+              ],
+              "variable": [
+                {
+                  "key": "idcuotapartista",
+                  "value": "1600193"
+                }
+              ]
+            }
+          },
+          "_postman_previewlanguage": "Text",
+          "header": [],
+          "cookie": [],
+          "body": ""
+        },
+        {
+          "name": "Valida Cuenta-Numero",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"tenencia\": {\r\n    \"administradora\": \"DELTA\",\r\n    \"fondoNombre\": \"DELTA PESOS\",\r\n    \"fondoId\": 394,\r\n    \"fondoNum\": 2,\r\n    \"tipoVCPId\": 715,\r\n    \"valorCuotaparte\": 11.008,\r\n    \"cantidadCuotapartes\": 136,\r\n    \"tipoVCPDescripcion\": \"Clase A\",\r\n    \"tipoVCPAbreviatura\": \"A\",\r\n    \"idCondicionIngresoEgreso\": \"UNICO\"\r\n  },\r\n  \"tipoRescate\": \"C\",\r\n  \"monto\": 0,\r\n  \"cantCuotaspartes\": 10,\r\n  \"fechaEjecucion\": \"20240910\",\r\n  \"esProgramada\": \"N\",\r\n  \"cuenta\": {\r\n    \"tipo\": \"CAHO\",\r\n    \"numero\": \"411102001317712\",\r\n    \"dependencia\": \"111\",\r\n    \"moneda\": \"PESOS\",\r\n    \"cuentaLink\": \"000411102001317712\"\r\n  },\r\n  \"canal\": \"AG\",\r\n  \"idSolicitudCanal\": \"12\",\r\n  \"acreditaCanal\": \"N\",\r\n  \"cuitcuil\": \"20297187715\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7240/api/inversiones/v1/cuotapartistas/:idcuotapartista/rescate",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7240",
+              "path": [
+                "api",
+                "inversiones",
+                "v1",
+                "cuotapartistas",
+                ":idcuotapartista",
+                "rescate"
+              ],
+              "variable": [
+                {
+                  "key": "idcuotapartista",
+                  "value": "1600193"
+                }
+              ]
+            }
+          },
+          "_postman_previewlanguage": "Text",
+          "header": [],
+          "cookie": [],
+          "body": ""
+        },
+        {
+          "name": "Valida FechaEjecucion por Caracteres invalidos",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"tenencia\": {\r\n    \"administradora\": \"DELTA\",\r\n    \"fondoNombre\": \"DELTA PESOS\",\r\n    \"fondoId\": 394,\r\n    \"fondoNum\": 2,\r\n    \"tipoVCPId\": 715,\r\n    \"valorCuotaparte\": 11.008,\r\n    \"cantidadCuotapartes\": 136,\r\n    \"tipoVCPDescripcion\": \"Clase A\",\r\n    \"tipoVCPAbreviatura\": \"A\",\r\n    \"idCondicionIngresoEgreso\": \"UNICO\"\r\n  },\r\n  \"tipoRescate\": \"C\",\r\n  \"monto\": 0,\r\n  \"cantCuotaspartes\": 10,\r\n  \"fechaEjecucion\": \"20240910\",\r\n  \"esProgramada\": \"N\",\r\n  \"cuenta\": {\r\n    \"tipo\": \"CAHO\",\r\n    \"numero\": \"411102001317712\",\r\n    \"dependencia\": \"111\",\r\n    \"moneda\": \"PESOS\",\r\n    \"cuentaLink\": \"000411102001317712\"\r\n  },\r\n  \"canal\": \"AG\",\r\n  \"idSolicitudCanal\": \"12\",\r\n  \"acreditaCanal\": \"N\",\r\n  \"cuitcuil\": \"20297187715\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7240/api/inversiones/v1/cuotapartistas/:idcuotapartista/rescate",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7240",
+              "path": [
+                "api",
+                "inversiones",
+                "v1",
+                "cuotapartistas",
+                ":idcuotapartista",
+                "rescate"
+              ],
+              "variable": [
+                {
+                  "key": "idcuotapartista",
+                  "value": "1600193"
+                }
+              ]
+            }
+          },
+          "_postman_previewlanguage": "Text",
+          "header": [],
+          "cookie": [],
+          "body": ""
+        },
+        {
+          "name": "Valida FondoNombre",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"tenencia\": {\r\n    \"administradora\": \"DELTA\",\r\n    \"fondoNombre\": \"DELTA PESOS\",\r\n    \"fondoId\": 394,\r\n    \"fondoNum\": 2,\r\n    \"tipoVCPId\": 715,\r\n    \"valorCuotaparte\": 11.008,\r\n    \"cantidadCuotapartes\": 136,\r\n    \"tipoVCPDescripcion\": \"Clase A\",\r\n    \"tipoVCPAbreviatura\": \"A\",\r\n    \"idCondicionIngresoEgreso\": \"UNICO\"\r\n  },\r\n  \"tipoRescate\": \"C\",\r\n  \"monto\": 0,\r\n  \"cantCuotaspartes\": 10,\r\n  \"fechaEjecucion\": \"20240910\",\r\n  \"esProgramada\": \"N\",\r\n  \"cuenta\": {\r\n    \"tipo\": \"CAHO\",\r\n    \"numero\": \"411102001317712\",\r\n    \"dependencia\": \"111\",\r\n    \"moneda\": \"PESOS\",\r\n    \"cuentaLink\": \"000411102001317712\"\r\n  },\r\n  \"canal\": \"AG\",\r\n  \"idSolicitudCanal\": \"12\",\r\n  \"acreditaCanal\": \"N\",\r\n  \"cuitcuil\": \"20297187715\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7240/api/inversiones/v1/cuotapartistas/:idcuotapartista/rescate",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7240",
+              "path": [
+                "api",
+                "inversiones",
+                "v1",
+                "cuotapartistas",
+                ":idcuotapartista",
+                "rescate"
+              ],
+              "variable": [
+                {
+                  "key": "idcuotapartista",
+                  "value": "1600193"
+                }
+              ]
+            }
+          },
+          "_postman_previewlanguage": "Text",
+          "header": [],
+          "cookie": [],
+          "body": ""
+        },
+        {
+          "name": "ValidaTipoVCPDescripcion",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"tenencia\": {\r\n    \"administradora\": \"DELTA\",\r\n    \"fondoNombre\": \"DELTA PESOS\",\r\n    \"fondoId\": 394,\r\n    \"fondoNum\": 2,\r\n    \"tipoVCPId\": 715,\r\n    \"valorCuotaparte\": 11.008,\r\n    \"cantidadCuotapartes\": 136,\r\n    \"tipoVCPDescripcion\": \"Clase A\",\r\n    \"tipoVCPAbreviatura\": \"A\",\r\n    \"idCondicionIngresoEgreso\": \"UNICO\"\r\n  },\r\n  \"tipoRescate\": \"C\",\r\n  \"monto\": 0,\r\n  \"cantCuotaspartes\": 10,\r\n  \"fechaEjecucion\": \"20240910\",\r\n  \"esProgramada\": \"N\",\r\n  \"cuenta\": {\r\n    \"tipo\": \"CAHO\",\r\n    \"numero\": \"411102001317712\",\r\n    \"dependencia\": \"111\",\r\n    \"moneda\": \"PESOS\",\r\n    \"cuentaLink\": \"000411102001317712\"\r\n  },\r\n  \"canal\": \"AG\",\r\n  \"idSolicitudCanal\": \"12\",\r\n  \"acreditaCanal\": \"N\",\r\n  \"cuitcuil\": \"20297187715\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7240/api/inversiones/v1/cuotapartistas/:idcuotapartista/rescate",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7240",
+              "path": [
+                "api",
+                "inversiones",
+                "v1",
+                "cuotapartistas",
+                ":idcuotapartista",
+                "rescate"
+              ],
+              "variable": [
+                {
+                  "key": "idcuotapartista",
+                  "value": "1600193"
+                }
+              ]
+            }
+          },
+          "_postman_previewlanguage": "Text",
+          "header": [],
+          "cookie": [],
+          "body": ""
+        },
+        {
+          "name": "Valida Cuenta-Numero por desbordamiento",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"tenencia\": {\r\n    \"administradora\": \"DELTA\",\r\n    \"fondoNombre\": \"DELTA PESOS\",\r\n    \"fondoId\": 394,\r\n    \"fondoNum\": 2,\r\n    \"tipoVCPId\": 715,\r\n    \"valorCuotaparte\": 11.008,\r\n    \"cantidadCuotapartes\": 136,\r\n    \"tipoVCPDescripcion\": \"Clase A\",\r\n    \"tipoVCPAbreviatura\": \"A\",\r\n    \"idCondicionIngresoEgreso\": \"UNICO\"\r\n  },\r\n  \"tipoRescate\": \"C\",\r\n  \"monto\": 0,\r\n  \"cantCuotaspartes\": 10,\r\n  \"fechaEjecucion\": \"20240910\",\r\n  \"esProgramada\": \"N\",\r\n  \"cuenta\": {\r\n    \"tipo\": \"CAHO\",\r\n    \"numero\": \"411102001317712\",\r\n    \"dependencia\": \"111\",\r\n    \"moneda\": \"PESOS\",\r\n    \"cuentaLink\": \"000411102001317712\"\r\n  },\r\n  \"canal\": \"AG\",\r\n  \"idSolicitudCanal\": \"12\",\r\n  \"acreditaCanal\": \"N\",\r\n  \"cuitcuil\": \"20297187715\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7240/api/inversiones/v1/cuotapartistas/:idcuotapartista/rescate",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7240",
+              "path": [
+                "api",
+                "inversiones",
+                "v1",
+                "cuotapartistas",
+                ":idcuotapartista",
+                "rescate"
+              ],
+              "variable": [
+                {
+                  "key": "idcuotapartista",
+                  "value": "1600193"
+                }
+              ]
+            }
+          },
+          "_postman_previewlanguage": "Text",
+          "header": [],
+          "cookie": [],
+          "body": ""
+        },
+        {
+          "name": "Sin FondoNombre",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"tenencia\": {\r\n    \"administradora\": \"BCBA\",\r\n    \"fondoId\": 394,\r\n    \"fondoNum\": 2,\r\n    \"tipoVCPId\": 715,\r\n    \"valorCuotaparte\": 11.008,\r\n    \"cantidadCuotapartes\": 136,\r\n    \"tipoVCPDescripcion\": \"Clasea\",\r\n    \"tipoVCPAbreviatura\": \"A\"\r\n  },\r\n  \"tipoRescate\": \"C\",\r\n  \"monto\": 0,\r\n  \"cantCuotaspartes\": 10,\r\n  \"fechaEjecucion\": \"20241104\",\r\n  \"esProgramada\": \"N\",\r\n  \"cuenta\": {\r\n    \"tipo\": \"CAHO\",\r\n    \"numero\": \"411102001317712\",\r\n    \"dependencia\": \"111\",\r\n    \"moneda\": \"PESOS\",\r\n    \"cuentaLink\": \"000411102001317712\"\r\n  },\r\n  \"canal\": \"AG\",\r\n  \"idSolicitudCanal\": \"1704\",\r\n  \"acreditaCanal\": \"N\",\r\n  \"cuitcuil\": \"20297187715\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7240/api/inversiones/v1/cuotapartistas/:idcuotapartista/rescate",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7240",
+              "path": [
+                "api",
+                "inversiones",
+                "v1",
+                "cuotapartistas",
+                ":idcuotapartista",
+                "rescate"
+              ],
+              "variable": [
+                {
+                  "key": "idcuotapartista",
+                  "value": "1600193"
+                }
+              ]
+            }
+          },
+          "_postman_previewlanguage": "Text",
+          "header": [],
+          "cookie": [],
+          "body": ""
+        },
+        {
+          "name": "Sin TipoVCPDescription",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"tenencia\": {\r\n    \"administradora\": \"BCBA\",\r\n    \"fondoId\": 394,\r\n    \"fondoNombre\": \"DELTA AHORRO\",\r\n    \"fondoNum\": 2,\r\n    \"tipoVCPId\": 715,\r\n    \"valorCuotaparte\": 11.008,\r\n    \"cantidadCuotapartes\": 136,\r\n    \"tipoVCPAbreviatura\": \"A\"\r\n  },\r\n  \"tipoRescate\": \"C\",\r\n  \"monto\": 0,\r\n  \"cantCuotaspartes\": 10,\r\n  \"fechaEjecucion\": \"20241104\",\r\n  \"esProgramada\": \"N\",\r\n  \"cuenta\": {\r\n    \"tipo\": \"CAHO\",\r\n    \"numero\": \"411102001317712\",\r\n    \"dependencia\": \"111\",\r\n    \"moneda\": \"PESOS\",\r\n    \"cuentaLink\": \"000411102001317712\"\r\n  },\r\n  \"canal\": \"AG\",\r\n  \"idSolicitudCanal\": \"1704\",\r\n  \"acreditaCanal\": \"N\",\r\n  \"cuitcuil\": \"20297187715\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7240/api/inversiones/v1/cuotapartistas/:idcuotapartista/rescate",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7240",
+              "path": [
+                "api",
+                "inversiones",
+                "v1",
+                "cuotapartistas",
+                ":idcuotapartista",
+                "rescate"
+              ],
+              "variable": [
+                {
+                  "key": "idcuotapartista",
+                  "value": "1600193"
+                }
+              ]
+            }
+          },
+          "_postman_previewlanguage": "Text",
+          "header": [],
+          "cookie": [],
+          "body": ""
+        },
+        {
+          "name": "Problema pasado por Marlene",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"tenencia\": {\r\n    \"administradora\": \"BCBA\",\r\n    \"fondoId\": 394,\r\n    \"fondoNombre\": \"DELTA AHORRO\",\r\n    \"fondoNum\": 2,\r\n    \"tipoVCPId\": 715,\r\n    \"valorCuotaparte\": 11.008,\r\n    \"cantidadCuotapartes\": 136,\r\n    \"tipoVCPDescripcion\": \"\",\r\n    \"tipoVCPAbreviatura\": \"A\"\r\n  },\r\n  \"tipoRescate\": \"C\",\r\n  \"monto\": 0,\r\n  \"cantCuotaspartes\": 10,\r\n  \"fechaEjecucion\": \"20241104\",\r\n  \"esProgramada\": \"N\",\r\n  \"cuenta\": {\r\n    \"tipo\": \"CAHO\",\r\n    \"numero\": \"411102001317712\",\r\n    \"dependencia\": \"111\",\r\n    \"moneda\": \"PESOS\",\r\n    \"cuentaLink\": \"000411102001317712\"\r\n  },\r\n  \"canal\": \"AG\",\r\n  \"idSolicitudCanal\": \"1704\",\r\n  \"acreditaCanal\": \"N\",\r\n  \"cuitcuil\": \"20297187715\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7240/api/inversiones/v1/cuotapartistas/:idcuotapartista/rescate",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7240",
+              "path": [
+                "api",
+                "inversiones",
+                "v1",
+                "cuotapartistas",
+                ":idcuotapartista",
+                "rescate"
+              ],
+              "variable": [
+                {
+                  "key": "idcuotapartista",
+                  "value": "1600193"
+                }
+              ]
+            }
+          },
+          "_postman_previewlanguage": "Text",
+          "header": [],
+          "cookie": [],
+          "body": ""
+        },
+        {
+          "name": "Valor Cuotaparte con 6 decimales",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"tenencia\": {\r\n    \"administradora\": \"BCBA\",\r\n    \"fondoId\": 394,\r\n    \"fondoNombre\": \"DELTA AHORRO\",\r\n    \"fondoNum\": 2,\r\n    \"tipoVCPId\": 715,\r\n    \"valorCuotaparte\": 11.008,\r\n    \"cantidadCuotapartes\": 136,\r\n    \"tipoVCPDescripcion\": \"\",\r\n    \"tipoVCPAbreviatura\": \"A\"\r\n  },\r\n  \"tipoRescate\": \"C\",\r\n  \"monto\": 0,\r\n  \"cantCuotaspartes\": 10,\r\n  \"fechaEjecucion\": \"20241104\",\r\n  \"esProgramada\": \"N\",\r\n  \"cuenta\": {\r\n    \"tipo\": \"CAHO\",\r\n    \"numero\": \"411102001317712\",\r\n    \"dependencia\": \"111\",\r\n    \"moneda\": \"PESOS\",\r\n    \"cuentaLink\": \"000411102001317712\"\r\n  },\r\n  \"canal\": \"AG\",\r\n  \"idSolicitudCanal\": \"1704\",\r\n  \"acreditaCanal\": \"N\",\r\n  \"cuitcuil\": \"20297187715\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7240/api/inversiones/v1/cuotapartistas/:idcuotapartista/rescate",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7240",
+              "path": [
+                "api",
+                "inversiones",
+                "v1",
+                "cuotapartistas",
+                ":idcuotapartista",
+                "rescate"
+              ],
+              "variable": [
+                {
+                  "key": "idcuotapartista",
+                  "value": "1600193"
+                }
+              ]
+            }
+          },
+          "_postman_previewlanguage": "Text",
+          "header": [],
+          "cookie": [],
+          "body": ""
+        },
+        {
+          "name": "cantCuotaspartes null",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"tenencia\": {\r\n    \"administradora\": \"BCBA\",\r\n    \"fondoId\": 394,\r\n    \"fondoNombre\": \"DELTA AHORRO\",\r\n    \"fondoNum\": 2,\r\n    \"tipoVCPId\": 715,\r\n    \"valorCuotaparte\": 11.008,\r\n    \"cantidadCuotapartes\": 136,\r\n    \"tipoVCPDescripcion\": \"\",\r\n    \"tipoVCPAbreviatura\": \"A\"\r\n  },\r\n  \"tipoRescate\": \"M\",\r\n  \"monto\": 123,\r\n  \"fechaEjecucion\": \"20241104\",\r\n  \"cantCuotaspartes\": 0,\r\n  \"esProgramada\": \"N\",\r\n  \"cuenta\": {\r\n    \"tipo\": \"CAHO\",\r\n    \"numero\": \"411102001317712\",\r\n    \"dependencia\": \"111\",\r\n    \"moneda\": \"PESOS\",\r\n    \"cuentaLink\": \"000411102001317712\"\r\n  },\r\n  \"canal\": \"AG\",\r\n  \"idSolicitudCanal\": \"1704\",\r\n  \"acreditaCanal\": \"N\",\r\n  \"cuitcuil\": \"20297187715\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7240/api/inversiones/v1/cuotapartistas/:idcuotapartista/rescate",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7240",
+              "path": [
+                "api",
+                "inversiones",
+                "v1",
+                "cuotapartistas",
+                ":idcuotapartista",
+                "rescate"
+              ],
+              "variable": [
+                {
+                  "key": "idcuotapartista",
+                  "value": "1600193"
+                }
+              ]
+            }
+          },
+          "_postman_previewlanguage": "Text",
+          "header": [],
+          "cookie": [],
+          "body": ""
+        },
+        {
+          "name": "Problemas con cantCuotaspartes",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"tenencia\" : {\r\n    \"administradora\":\"BCBA\",\r\n    \"fondoNombre\":\"DELTA PESOS\",\r\n    \"fondoId\":394,\r\n    \"fondoNum\":5,\r\n    \"tipoVCPId\":715,\r\n    \"valorCuotaparte\":31.202416,\r\n    \"cantidadCuotapartes\":20.0283,\r\n    \"tipoVCPDescripcion\":\"Clase A\",\r\n    \"tipoVCPAbreviatura\":\"A\"\r\n    },   \r\n    \"cuenta\": {\r\n    \"tipo\":\"CAHO\",\r\n    \"numero\":\"411102001317712\",\r\n    \"dependencia\":\"111\",\r\n    \"moneda\":\"PESOS\",\r\n    \"cuentaLink\":\"000001110201317712\"\r\n    },\r\n   \r\n    \"tipoRescate\":\"T\",\r\n    \"monto\":0.0,\r\n    \"cantCuotaspartes\":1.6044,\r\n    \"fechaEjecucion\":\"20241218\",\r\n    \"esProgramada\":\"N\",\r\n    \"canal\":\"AG\",\r\n    \"idSolicitudCanal\":\"1398\",\r\n    \"acreditaCanal\":\"N\",\r\n    \"cuitcuil\":\"20297187717\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7240/api/inversiones/v1/cuotapartistas/:idcuotapartista/rescate",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7240",
+              "path": [
+                "api",
+                "inversiones",
+                "v1",
+                "cuotapartistas",
+                ":idcuotapartista",
+                "rescate"
+              ],
+              "variable": [
+                {
+                  "key": "idcuotapartista",
+                  "value": "1600193"
+                }
+              ]
+            }
+          },
+          "_postman_previewlanguage": "Text",
+          "header": [],
+          "cookie": [],
+          "body": ""
+        },
+        {
+          "name": "No graba error que lanza api v1",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n   \"tenencia\": {\r\n      \"administradora\": \"DELTA\",\r\n      \"fondoNombre\": \"DELTA AHORRO PLUS\",\r\n      \"fondoId\": 473,\r\n      \"fondoNum\": 13,\r\n      \"tipoVCPId\": 931,\r\n      \"valorCuotaparte\": 242.185,\r\n      \"cantidadCuotapartes\": 6.18,\r\n      \"tipoVCPDescripcion\": null,\r\n      \"tipoVCPAbreviatura\": \"A\"\r\n   },\r\n   \"tipoRescate\": \"M\",\r\n   \"monto\": 500,\r\n   \"cantCuotaspartes\": 0,\r\n   \"fechaEjecucion\": \"20241223\",\r\n   \"esProgramada\": \"N\",\r\n   \"cuenta\": {\r\n      \"tipo\": \"CAHO\",\r\n      \"numero\": \"401802005154641\",\r\n      \"dependencia\": \"018\",\r\n      \"moneda\": \"PESOS\",\r\n      \"cuentaLink\": \"000000180205154641\"\r\n   },\r\n   \"canal\": \"HB\",\r\n   \"idSolicitudCanal\": \"00000000000000001284\",\r\n   \"acreditaCanal\": \"S\",\r\n   \"cuitcuil\": \"27306462623\",\r\n   \"nrocuotapartista\": \"1600193\" \r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7240/api/inversiones/v1/cuotapartistas/:idcuotapartista/rescate",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7240",
+              "path": [
+                "api",
+                "inversiones",
+                "v1",
+                "cuotapartistas",
+                ":idcuotapartista",
+                "rescate"
+              ],
+              "variable": [
+                {
+                  "key": "idcuotapartista",
+                  "value": "1600193"
+                }
+              ]
+            }
+          },
+          "_postman_previewlanguage": "Text",
+          "header": [],
+          "cookie": [],
+          "body": ""
+        },
+        {
+          "name": "Problemas con el redondeo - BCBA",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"tenencia\": {\r\n    \"administradora\": \"BCBA\",\r\n    \"fondoNombre\": \"CRECER LIQUIDEZ DOLARES\",\r\n    \"fondoId\": 7,\r\n    \"fondoNum\": 7,\r\n    \"tipoVCPId\": 27,\r\n    \"valorCuotaparte\": 1.000000,\r\n    \"cantidadCuotapartes\": 8223.5800,\r\n    \"tipoVCPDescripcion\": \"Clase A\",\r\n    \"tipoVCPAbreviatura\": \"A\"    \r\n  },\r\n  \"tipoRescate\": \"M\",\r\n  \"monto\": 23.58,\r\n  \"cantCuotaspartes\": 0,\r\n  \"fechaEjecucion\": \"20260703\",\r\n  \"esProgramada\": \"N\",\r\n  \"nrocuotapartista\":\"32613\",\r\n  \"cuenta\": {\r\n    \"tipo\": \"CAHO\",\r\n    \"numero\": \"202504005003288\",\r\n    \"dependencia\": \"025\",\r\n    \"moneda\": \"DOLAR\",\r\n    \"cuentaLink\": \"000000250405003288\"\r\n  },\r\n  \"canal\": \"HB\",\r\n  \"idSolicitudCanal\": \"7102ABCDTES1827\",\r\n  \"acreditaCanal\": \"S\",\r\n  \"cuitcuil\": \"27122764341\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7240/api/inversiones/v2/cuotapartistas/:idcuotapartista/rescate",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7240",
+              "path": [
+                "api",
+                "inversiones",
+                "v2",
+                "cuotapartistas",
+                ":idcuotapartista",
+                "rescate"
+              ],
+              "variable": [
+                {
+                  "key": "idcuotapartista",
+                  "value": "23112276434"
+                }
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        }
+      ]
+    },
+    {
+      "name": "Cancelacion de Programada",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "https://localhost:7017/api/inversiones/v1/cuotapartistas/:idcuotapartita/cancelacionprogramada?nroCuotapartista=1600193&idProgramada=4&administradora=DELTA",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "7017",
+          "path": [
+            "api",
+            "inversiones",
+            "v1",
+            "cuotapartistas",
+            ":idcuotapartita",
+            "cancelacionprogramada"
+          ],
+          "query": [
+            {
+              "key": "nroCuotapartista",
+              "value": "1600193"
+            },
+            {
+              "key": "idProgramada",
+              "value": "4"
+            },
+            {
+              "key": "administradora",
+              "value": "DELTA"
+            }
+          ],
+          "variable": [
+            {
+              "key": "idcuotapartita",
+              "value": "1600193"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Rescate Fondo",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"tenencia\": {\r\n    \"administradora\": \"BCBA\",\r\n    \"fondoId\": 394,\r\n    \"fondoNombre\": \"DELTA AHORRO\",\r\n    \"fondoNum\": 2,\r\n    \"tipoVCPId\": 715,\r\n    \"valorCuotaparte\": 11.008,\r\n    \"cantidadCuotapartes\": 136,\r\n    \"tipoVCPDescripcion\": \"\",\r\n    \"tipoVCPAbreviatura\": \"A\"\r\n  },\r\n  \"tipoRescate\": \"C\",\r\n  \"monto\": 0,\r\n  \"cantCuotaspartes\": 10,\r\n  \"fechaEjecucion\": \"20241104\",\r\n  \"esProgramada\": \"N\",\r\n  \"nrocuotapartista\": \"1600193\",\r\n  \"cuenta\": {\r\n    \"tipo\": \"CAHO\",\r\n    \"numero\": \"411102001317712\",\r\n    \"dependencia\": \"111\",\r\n    \"moneda\": \"PESOS\",\r\n    \"cuentaLink\": \"000411102001317712\"\r\n  },\r\n  \"canal\": \"AG\",\r\n  \"idSolicitudCanal\": \"1704\",\r\n  \"acreditaCanal\": \"N\",\r\n  \"cuitcuil\": \"20297187715\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://localhost:7240/api/inversiones/v2/cuotapartistas/:idcuotapartista/rescate",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "7240",
+          "path": [
+            "api",
+            "inversiones",
+            "v2",
+            "cuotapartistas",
+            ":idcuotapartista",
+            "rescate"
+          ],
+          "variable": [
+            {
+              "key": "idcuotapartista",
+              "value": "1600193"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Metricas",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"tenencia\": {\r\n    \"administradora\": \"BCBA\",\r\n    \"fondoId\": 394,\r\n    \"fondoNombre\": \"DELTA AHORRO\",\r\n    \"fondoNum\": 2,\r\n    \"tipoVCPId\": 715,\r\n    \"valorCuotaparte\": 11.008,\r\n    \"cantidadCuotapartes\": 136,\r\n    \"tipoVCPDescripcion\": \"\",\r\n    \"tipoVCPAbreviatura\": \"A\"\r\n  },\r\n  \"tipoRescate\": \"C\",\r\n  \"monto\": 0,\r\n  \"cantCuotaspartes\": 10,\r\n  \"fechaEjecucion\": \"20241104\",\r\n  \"esProgramada\": \"N\",\r\n  \"nrocuotapartista\": \"1600193\",\r\n  \"cuenta\": {\r\n    \"tipo\": \"CAHO\",\r\n    \"numero\": \"411102001317712\",\r\n    \"dependencia\": \"111\",\r\n    \"moneda\": \"PESOS\",\r\n    \"cuentaLink\": \"000411102001317712\"\r\n  },\r\n  \"canal\": \"AG\",\r\n  \"idSolicitudCanal\": \"1704\",\r\n  \"acreditaCanal\": \"N\",\r\n  \"cuitcuil\": \"20297187715\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7240/metrics",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7240",
+              "path": [
+                "metrics"
+              ]
+            }
+          },
+          "_postman_previewlanguage": "Text",
+          "header": [],
+          "cookie": [],
+          "body": ""
+        },
+        {
+          "name": "Rescate Total BCBA",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"tenencia\": {\r\n    \"administradora\": \"BCBA\",\r\n    \"fondoId\": 5,\r\n    \"fondoNombre\": \"CRECER LIQUIDEZ\",\r\n    \"fondoNum\": 5,\r\n    \"tipoVCPId\": 25,\r\n    \"valorCuotaparte\": 11.008,\r\n    \"cantidadCuotapartes\": 136,\r\n    \"tipoVCPDescripcion\": \"\",\r\n    \"tipoVCPAbreviatura\": \"A\"\r\n  },\r\n  \"tipoRescate\": \"T\",\r\n  \"monto\": 0,\r\n  \"cantCuotaspartes\": 0,\r\n  \"fechaEjecucion\": \"20250203\",\r\n  \"esProgramada\": \"N\",\r\n  \"cuenta\": {\r\n    \"tipo\": \"CAHO\",\r\n    \"numero\": \"411102001317712\",\r\n    \"dependencia\": \"111\",\r\n    \"moneda\": \"PESOS\",\r\n    \"cuentaLink\": \"000411102001317712\"\r\n  },\r\n  \"canal\": \"AG\",\r\n  \"idSolicitudCanal\": \"1805\",\r\n  \"acreditaCanal\": \"N\",\r\n  \"cuitcuil\": \"20297187715\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7240/api/inversiones/v2/cuotapartistas/:idcuotapartista/rescate",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7240",
+              "path": [
+                "api",
+                "inversiones",
+                "v2",
+                "cuotapartistas",
+                ":idcuotapartista",
+                "rescate"
+              ],
+              "variable": [
+                {
+                  "key": "idcuotapartista",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "_postman_previewlanguage": "Text",
+          "header": [],
+          "cookie": [],
+          "body": ""
+        },
+        {
+          "name": "Rescate Fondo CIE",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"tenencia\": {\r\n    \"administradora\": \"BCBA\",\r\n    \"fondoId\": 394,\r\n    \"fondoNombre\": \"DELTA AHORRO\",\r\n    \"fondoNum\": 2,\r\n    \"tipoVCPId\": 715,\r\n    \"valorCuotaparte\": 11.008,\r\n    \"cantidadCuotapartes\": 136,\r\n    \"tipoVCPDescripcion\": \"\",\r\n    \"tipoVCPAbreviatura\": \"A\"\r\n  },\r\n  \"tipoRescate\": \"C\",\r\n  \"monto\": 0,\r\n  \"cantCuotaspartes\": 10,\r\n  \"fechaEjecucion\": \"20241104\",\r\n  \"esProgramada\": \"N\",\r\n  \"cuenta\": {\r\n    \"tipo\": \"CAHO\",\r\n    \"numero\": \"411102001317712\",\r\n    \"dependencia\": \"111\",\r\n    \"moneda\": \"PESOS\",\r\n    \"cuentaLink\": \"000411102001317712\"\r\n  },\r\n  \"canal\": \"AG\",\r\n  \"idSolicitudCanal\": \"1704\",\r\n  \"acreditaCanal\": \"N\",\r\n  \"cuitcuil\": \"20297187715\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7240/api/inversiones/v2/cuotapartistas/:idcuotapartista/rescate",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7240",
+              "path": [
+                "api",
+                "inversiones",
+                "v2",
+                "cuotapartistas",
+                ":idcuotapartista",
+                "rescate"
+              ],
+              "variable": [
+                {
+                  "key": "idcuotapartista",
+                  "value": "1600193"
+                }
+              ]
+            }
+          },
+          "_postman_previewlanguage": "Text",
+          "header": [],
+          "cookie": [],
+          "body": ""
+        },
+        {
+          "name": "Prueba 2",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"tenencia\": {\r\n    \"administradora\": \"DELTA\",\r\n    \"fondoNombre\": \"DELTA PESOS\",\r\n    \"fondoId\": 394,\r\n    \"fondoNum\": 2,\r\n    \"tipoVCPId\": 715,\r\n    \"valorCuotaparte\": 11.008,\r\n    \"cantidadCuotapartes\": 136,\r\n    \"tipoVCPDescripcion\": \"Clase A\",\r\n    \"tipoVCPAbreviatura\": \"A\"\r\n  },\r\n  \"tipoRescate\": \"C\",\r\n  \"monto\": 0,\r\n  \"cantCuotaspartes\": 10,\r\n  \"fechaEjecucion\": \"20260611\",\r\n  \"esProgramada\": \"N\",\r\n  \"cuenta\": {\r\n    \"tipo\": \"CAHO\",\r\n    \"numero\": \"411102001317712\",\r\n    \"dependencia\": \"111\",\r\n    \"moneda\": \"PESOS\",\r\n    \"cuentaLink\": \"000411102001317712\"\r\n  },\r\n  \"canal\": \"AG\",\r\n  \"idSolicitudCanal\": \"12\",\r\n  \"nrocuotapartista\": \"41121139261\",\r\n  \"acreditaCanal\": \"N\",\r\n  \"cuitcuil\": \"20297187715\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://localhost:7240/api/inversiones/v2/cuotapartistas/:idcuotapartista/rescate",
+              "protocol": "https",
+              "host": [
+                "localhost"
+              ],
+              "port": "7240",
+              "path": [
+                "api",
+                "inversiones",
+                "v2",
+                "cuotapartistas",
+                ":idcuotapartista",
+                "rescate"
+              ],
+              "variable": [
+                {
+                  "key": "idcuotapartista",
+                  "value": "32712"
+                }
+              ]
+            }
+          },
+          "_postman_previewlanguage": "Text",
+          "header": [],
+          "cookie": [],
+          "body": ""
+        }
+      ]
+    },
+    {
+      "name": "Rescate ID 2",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"tenencia\": {\r\n    \"administradora\": \"BCBA\",\r\n    \"fondoId\": 5,\r\n    \"fondoNombre\": \"CRECER LIQUIDEZ\",\r\n    \"fondoNum\": 5,\r\n    \"tipoVCPId\": 25,\r\n    \"valorCuotaparte\": 11.008,\r\n    \"cantidadCuotapartes\": 136,\r\n    \"tipoVCPDescripcion\": \"\",\r\n    \"tipoVCPAbreviatura\": \"A\"\r\n  },\r\n  \"tipoRescate\": \"T\",\r\n  \"monto\": 0,\r\n  \"cantCuotaspartes\": 0,\r\n  \"fechaEjecucion\": \"20250203\",\r\n  \"esProgramada\": \"N\",\r\n  \"cuenta\": {\r\n    \"tipo\": \"CAHO\",\r\n    \"numero\": \"411102001317712\",\r\n    \"dependencia\": \"111\",\r\n    \"moneda\": \"PESOS\",\r\n    \"cuentaLink\": \"000411102001317712\"\r\n  },\r\n  \"canal\": \"AG\",\r\n  \"idSolicitudCanal\": \"1805\",\r\n  \"nrocuotapartista\": \"7\",\r\n  \"acreditaCanal\": \"N\",\r\n  \"cuitcuil\": \"20297187715\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://localhost:7240/api/inversiones/v2/cuotapartistas/:idcuotapartista/rescate",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "7240",
+          "path": [
+            "api",
+            "inversiones",
+            "v2",
+            "cuotapartistas",
+            ":idcuotapartista",
+            "rescate"
+          ],
+          "variable": [
+            {
+              "key": "idcuotapartista",
+              "value": "2"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Rescate Fondo",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"tenencia\": {\r\n    \"administradora\": \"BCBA\",\r\n    \"fondoNombre\": \"CRECER LIQUIDEZ DOLARES\",\r\n    \"fondoId\": 7,\r\n    \"fondoNum\": 7,\r\n    \"tipoVCPId\": 27,\r\n    \"valorCuotaparte\": 1.000000,\r\n    \"cantidadCuotapartes\": 8223.5800,\r\n    \"tipoVCPDescripcion\": \"Clase A\",\r\n    \"tipoVCPAbreviatura\": \"A\"    \r\n  },\r\n  \"tipoRescate\": \"M\",\r\n  \"monto\": 23.58,\r\n  \"cantCuotaspartes\": 0,\r\n  \"fechaEjecucion\": \"20260703\",\r\n  \"esProgramada\": \"N\",\r\n  \"nrocuotapartista\":\"32613\",\r\n  \"cuenta\": {\r\n    \"tipo\": \"CAHO\",\r\n    \"numero\": \"202504005003288\",\r\n    \"dependencia\": \"025\",\r\n    \"moneda\": \"DOLAR\",\r\n    \"cuentaLink\": \"000000250405003288\"\r\n  },\r\n  \"canal\": \"HB\",\r\n  \"idSolicitudCanal\": \"7102ABCDTES1827\",\r\n  \"acreditaCanal\": \"S\",\r\n  \"cuitcuil\": \"27122764341\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://localhost:7240/api/inversiones/v2/cuotapartistas/:idcuotapartista/rescate",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "7240",
+          "path": [
+            "api",
+            "inversiones",
+            "v2",
+            "cuotapartistas",
+            ":idcuotapartista",
+            "rescate"
+          ],
+          "variable": [
+            {
+              "key": "idcuotapartista",
+              "value": "23112276434"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Suscripcion",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\t\"cuenta\": {\r\n    \"tipo\": \"CAHO\",\r\n    \"numero\": \"111193\",\r\n    \"dependencia\": 30,\r\n    \"moneda\": \"PESOS\",\r\n    \"numeroCobis\": \"403002000111193\",\r\n    \"cuentaLink\": \"000000300200111193\" \r\n  },\r\n  \"fondo\": {\r\n    \"administradora\": \"BCBA\",\r\n    \"fondoId\": 8558,\r\n    \"fondoNum\":1,\r\n    \"nombre\": \"CRECER 1\",\r\n    \"tipoVCPID\": 1016,\r\n    \"tipoVCPAbreviatura\": \"A\",\r\n    \"tipoVCPDescripcion\": \"Clase A\",\r\n   \"idCondicionIngresoEgreso\": \"10\",\r\n    \"moneda\": {\r\n      \"id\": \"ARS\",\r\n      \"simbolo\": \"$\",\r\n      \"descripcion\": \"Pesos\"\r\n    }\r\n  },\r\n  \"sucursal\": 30,\r\n  \"canalVenta\": \"HB\",\r\n  \"oficialCredito\": \"CI\",\r\n  \"monto\": 150000000,\r\n  \"idSolicitudCanal\": \"00085965\",\r\n  \"numCuotapartista\": 1614989, \r\n  \"esProgramada\":\"N\",   \r\n  \"cuitCuil\":\"27279302252\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://localhost:7118/api/inversiones/v1/cuotapartistas/:idcuotapartista/suscripcion",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "7118",
+          "path": [
+            "api",
+            "inversiones",
+            "v1",
+            "cuotapartistas",
+            ":idcuotapartista",
+            "suscripcion"
+          ],
+          "variable": [
+            {
+              "key": "idcuotapartista",
+              "value": "1600193"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
